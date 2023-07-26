@@ -15,13 +15,12 @@ async function getAllUser() {
    <td>${user.fullName}</td >
    <td>${user.phoneNumber}</td>
    <td>${user.type}</td>
-   <td>${user.accountActivate   ? `<div class="form-check form-switch">
-   <input class="form-check-input" onchange="handleAccountActivation(this ) id="${user.uid}" type="checkbox" id="flexSwitchCheckChecked" checked>
+   <td>${user.accountActivate ? `<div class="form-check form-switch">
+   <input id='${user.uid}' class="form-check-input" onchange="handleAccountActivation( this )"  type="checkbox" id="flexSwitchCheckChecked" checked>
  </div>` : `<div class="form-check form-switch">
- <input class="form-check-input"  onchange="handleAccountActivation(this  )"  id="${user.uid}" type="checkbox" id="flexSwitchCheckChecked" >
 </div>`
 
-       }</td>   </td>
+                }</td>   </td>
 
 
    </tr >  `
@@ -30,7 +29,9 @@ async function getAllUser() {
         }
     });
 }
-window.handleAccountActivation  = function handleAccountActivation(e  ){
-    let abc = document.getElementById(`${user.uid}`);
-    console.log(abc)
+function handleAccountActivation(e) {
+
+    console.log('abc', e.id)
+    
 }
+window.handleAccountActivation = handleAccountActivation
