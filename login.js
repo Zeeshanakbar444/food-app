@@ -1,10 +1,27 @@
-import { getAuth, createUserWithEmailAndPassword , signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
-import {  doc, setDoc  , getDoc} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+import { doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 
-import {auth , db} from "./firebaseConfig.js"
+import { auth, db } from "./firebaseConfig.js"
+
+
+window.addEventListener("load", function () {
+    if (localStorage.getItem("uidUser") !== null) {
+        history.back()
+        return
+    }
+})
+
 
 let loginBtn = document.getElementById("loginBtn")
 loginBtn.addEventListener("click", login)
+
+
+
+
+
+
+
+
 async function login(e) {
     e.preventDefault();
     try {
@@ -40,12 +57,29 @@ async function login(e) {
 
         if (userData.type === "admin") {
             window.location.replace("./admin.html")
-        } else if (userData.type === "customer") {
-            window.location.replace("./dashbord.html")
-        } else if (userData.type === "vendor") {
-            window.location.replace("./vendor.html")
-        }
+        } else if (userData.type === "Customer") {
 
+            if (!userData.accountActivate) {
+                loginBtn.className = "btn btn-danger"
+                loginBtn.innerHTML = `Login`
+                alert("Your account is disabled")
+                return
+
+            }
+
+            window.location.replace("./customer.html")
+        } else if (userData.type === "Vendor") {
+
+            if (!userData.accountActivate) {
+                loginBtn.className = "btn btn-danger"
+                loginBtn.innerHTML = `Login`
+                alert("Your account is disabled")
+                return
+
+            }
+            window.location.replace("./vendor.html")
+
+        }
     }
     catch (error) {
         console.log("error", error.message)
@@ -54,5 +88,6 @@ async function login(e) {
         loginBtn.innerHTML = "login"
     }
 }
+
 
 
