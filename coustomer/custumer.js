@@ -1,5 +1,5 @@
 import { getDoc, onSnapshot, collection } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
-import { db } from "./firebaseConfig.js";
+import { db } from "../firebaseConfig.js";
 
 window.addEventListener("load", () => {
     let localUserLogin = JSON.parse(localStorage.getItem("uidUser"))
@@ -27,5 +27,5 @@ window.addEventListener("load", getData)
 let logoutBtn = document.getElementById("logoutBtn");
 logoutBtn.addEventListener('click', () => {
     localStorage.removeItem('uidUser')
-    window.location.replace("./index.html")
+    window.location.replace("../index.html")
 })

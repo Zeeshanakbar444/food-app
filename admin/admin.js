@@ -1,5 +1,5 @@
 import { collection, getDocs, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
-import { db } from "./firebaseConfig.js";
+import { db } from "../firebaseConfig.js";
 
 let tableBody = document.getElementById("tableBody")
 window.addEventListener("load", getAllUser)
@@ -61,6 +61,6 @@ async function handleAccountActivation(e) {
 let logoutBtn = document.getElementById('logoutBtn')
 logoutBtn.addEventListener("click", () => {
     localStorage.removeItem("uidUser");
-    location.replace("index.html")
+    location.replace("../index.html")
 })
 window.handleAccountActivation = handleAccountActivation

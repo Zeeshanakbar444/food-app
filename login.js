@@ -56,7 +56,7 @@ async function login(e) {
         localStorage.setItem("uidUser", JSON.stringify(userData))
 
         if (userData.type === "admin") {
-            window.location.replace("./admin.html")
+            window.location.replace("./admin/admin.html")
         } else if (userData.type === "Customer") {
 
             if (!userData.accountActivate) {
@@ -67,7 +67,7 @@ async function login(e) {
 
             }
 
-            window.location.replace("./customer.html")
+            window.location.replace("./coustomer/customer.html")
         } else if (userData.type === "Vendor") {
 
             if (!userData.accountActivate) {
@@ -77,7 +77,7 @@ async function login(e) {
                 return
 
             }
-            window.location.replace("./vendor.html")
+            window.location.replace("./vendor/vendor.html")
 
         }
     }

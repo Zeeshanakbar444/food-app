@@ -2,7 +2,7 @@
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 
-import {auth , db} from "./firebaseConfig.js"
+import {auth , db} from "../firebaseConfig.js"
 
 let signupBtn = document.getElementById("signupBtn");
 signupBtn.addEventListener("click", signup)
@@ -62,7 +62,7 @@ async function signup(e) {
 
         const userRef = doc(db, 'users', uid);
         const userInDataBase = await setDoc(userRef, userObj)
-        window.location.href = "/"
+        window.location.href = "../index.html"
 
     }
     catch (error) {
