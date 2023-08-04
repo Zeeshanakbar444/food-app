@@ -63,6 +63,8 @@ async function signup(e) {
         const userRef = doc(db, 'users', uid);
         const userInDataBase = await setDoc(userRef, userObj)
         window.location.href = "../index.html"
+        signupBtn.innerHTML = "signup"
+        signupBtn.className = "btn btn-info"
 
     }
     catch (error) {
