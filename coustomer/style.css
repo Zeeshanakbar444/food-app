@@ -1,0 +1,82 @@
+.containerFor {
+    background-image: linear-gradient(rgba(34, 182, 91, 0.7), rgba(0, 0, 0, 0.7)), url(../image/food1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 20px;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0 , 0.5);
+}
+
+#col {
+    background-color: red;
+    padding: 10px;
+}
+
+button {
+    margin: 10px;
+}
+
+h1 {
+    margin: auto;
+    color: antiquewhite;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+
+}
+
+.para {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.para_div {
+    width: 50%;
+    margin-top: 100px;
+    color: antiquewhite;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+
+}
+
+button {
+    font-size: 25px;
+    background-color: red;
+    color: antiquewhite;
+}
+
+button:hover {
+    background-color: aquamarine;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    flex-wrap: wrap;
+   
+ 
+}
+.card{
+    margin-top: 40px;
+    padding: 10px;
+    background-color:purple ;
+/* box-shadow: 0 12px 12px red; */
+    /* border: 2px solid black; */
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}

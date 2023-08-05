@@ -15,10 +15,31 @@ window.addEventListener("load", () => {
     }
 })
 
+
+let productParent = document.getElementById('productParent')
 let getData = () => {
     const product = onSnapshot(collection(db, "product"), (snapshot) => {
         snapshot.forEach(function (data) {
             console.log("data", data.data())
+            let dataGetFb = data.data()
+
+            let dataCard = `  <div class="card" style="width: 18rem;">
+            <img src="${dataGetFb.imageUrl}" class="card-img-top card" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">${dataGetFb.productName}</h5>
+              <p class="card-text">${dataGetFb.productDesc}</p>
+              <a class="btn btn-primary">$ ${dataGetFb.productPrice}</a>
+            </div>
+    
+          </div>`
+
+            productParent.innerHTML += dataCard
+
+
+
+            // imageUrl  productDesc productName productPrice  userUid
+
+
         })
     });
 }

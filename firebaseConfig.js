@@ -1,6 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+import { getStorage } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-storage.js";
+
 const firebaseConfig = {
     apiKey: "AIzaSyDIAlBM1E0MD-b83-ufwGu2XSPZMphN2nE",
     authDomain: "todo-project-ca959.firebaseapp.com",
@@ -13,7 +15,15 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+
+// Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
 
-export {db  , auth}
+// Initialize AUTH
+const auth = getAuth();
+
+
+// Initialize Cloud Storage and get a reference to the service
+const storage = getStorage();
+
+export { db, auth, storage }

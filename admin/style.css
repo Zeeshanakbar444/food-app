@@ -1,0 +1,40 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../image/food.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+#logoutBtn {
+    margin: 10px 20px;
+}
+
+#zee {
+    background-color: rgba(100, 45, 100, 0.5);
+}
+
+#hearder {
+
+    color: whitesmoke;
+    padding: 10px;
+    margin: auto;
+    word-spacing: 10px;
+}
+
+.table tr {
+    color: olivedrab;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    
+}
+#logoutBtn:hover{
+background-color: blueviolet;
+}
+th{
+    color: rgb(199, 4, 14);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
