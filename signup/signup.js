@@ -2,13 +2,14 @@
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 
-import {auth , db} from "../firebaseConfig.js"
+import { auth, db } from "../firebaseConfig.js"
 
 let signupBtn = document.getElementById("signupBtn");
 signupBtn.addEventListener("click", signup)
 
 async function signup(e) {
     e.preventDefault();
+
     try {
 
         let fullName = document.getElementById("fullName").value
@@ -41,7 +42,10 @@ async function signup(e) {
         }
 
         const userAuth = await createUserWithEmailAndPassword(auth, email, password)
-        console.log(userAuth.user.uid)
+        console.log(userAuth)
+
+
+
 
         let uid = userAuth.user.uid
 

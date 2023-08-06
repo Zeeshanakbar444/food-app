@@ -70,7 +70,12 @@ let ProductFormFunction = async (e) => {
 
 
         const docRef = await addDoc(collection(db, "product"), productObj);
-        
+
+
+
+        console.log("data", docRef)
+
+
         console.log("succsefully added")
 
         submitBtn.className = ' btn btn-primary'
@@ -161,4 +166,6 @@ function uploadImage(file) {
 
     })
 }
+
+
 

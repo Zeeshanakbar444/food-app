@@ -4,6 +4,7 @@
     background-image: linear-gradient(to right, rgba(255, 66, 23, 0.7), rgba(59, 231, 7, 0.7));
     padding: 20px;
     width: 90%;
+    margin: auto;
 }
 
 body {
@@ -66,4 +67,5 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
 }
