@@ -5,9 +5,26 @@ import { auth, db } from "./firebaseConfig.js"
 
 
 window.addEventListener("load", function () {
-    if (localStorage.getItem("uidUser") !== null) {
-        history.back()
+    let data = JSON.parse(localStorage.getItem("uidUser"))
+    console.log(data)
+
+
+
+
+
+    if (localStorage.getItem("uidUser")) {
+
+        // history.back()
+        if (data.type === "admin") {
+            this.window.location.replace("./admin/admin.html")
+        } else if (data.type === "Vendor") {
+            this.window.location.replace("./vendor/vendor.html")
+        } else if (data.type === "Customer") {
+            this.window.location.replace("./coustomer/customer.html")
+        }
         return
+    } else {
+
     }
 })
 

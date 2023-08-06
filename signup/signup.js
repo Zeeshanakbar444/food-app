@@ -7,6 +7,12 @@ import { auth, db } from "../firebaseConfig.js"
 let signupBtn = document.getElementById("signupBtn");
 signupBtn.addEventListener("click", signup)
 
+
+
+
+
+
+
 async function signup(e) {
     e.preventDefault();
 
